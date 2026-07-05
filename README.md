@@ -57,5 +57,5 @@ The physical design implementation
 3. ANTENNA_CHECK =0
 
 ## Links
-1. routed_design = 
+1. routed_design = https://github.com/shlok-19-shlok/8_bit_ALU_rtl_gds/blob/main/screenshots/6_detail_routing.png
 2. gds_file_view = https://github.com/shlok-19-shlok/8_bit_ALU_rtl_gds/blob/main/screenshots/10_gds_file_klayout.png
