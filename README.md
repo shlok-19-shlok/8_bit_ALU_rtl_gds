@@ -36,7 +36,7 @@ The physical design implementation
 9. Netgen
 10. KLayout
 
-
+## Config
 1. Technology Node	  =  SkyWater 130nm (sky130_fd_sc_hd)
 2. Clock Frequency	  =  100 MHz (Clock Period: 10.0 ns)
 3. Die Dimensions	    =  99.92 µm × 110.64 µm
