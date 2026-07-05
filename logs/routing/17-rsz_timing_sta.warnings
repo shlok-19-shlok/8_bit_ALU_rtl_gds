@@ -1,0 +1,25 @@
+[WARNING GRT-0026] Missing route to pin _398_/C.
+[WARNING GRT-0026] Missing route to pin _401_/A1.
+[WARNING GRT-0026] Missing route to pin _359_/B1.
+[WARNING GRT-0026] Missing route to pin _401_/A2.
+[WARNING GRT-0026] Missing route to pin _359_/A1.
+[WARNING GRT-0026] Missing route to pin _359_/A2.
+[WARNING GRT-0026] Missing route to pin _359_/Y.
+[WARNING GRT-0026] Missing route to pin _465_/A.
+[WARNING GRT-0026] Missing route to pin _441_/Y.
+[WARNING GRT-0026] Missing route to pin _442_/X.
+[WARNING GRT-0026] Missing route to pin rebuffer5/A.
+[WARNING GRT-0026] Missing route to pin _465_/Y.
+[WARNING GRT-0026] Missing route to pin _490_/Y.
+[WARNING GRT-0026] Missing route to pin rebuffer4/A.
+[WARNING GRT-0026] Missing route to pin _398_/A.
+[WARNING GRT-0026] Missing route to pin rebuffer1/A.
+[WARNING GRT-0026] Missing route to pin _398_/B.
+[WARNING GRT-0026] Missing route to pin _267_/X.
+[WARNING GRT-0026] Missing route to pin input4/X.
+[WARNING GRT-0026] Missing route to pin _398_/D.
+[WARNING GRT-0026] Missing route to pin input9/X.
+[WARNING GRT-0026] Missing route to pin _266_/A.
+[WARNING GRT-0026] Missing route to pin output27/A.
+Warning: There are 2 unconstrained endpoints.
+[WARNING] Did not save OpenROAD database!

@@ -1,0 +1,1056 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.30+48 (git sha1 14d50a176d5, gcc 8.3.1 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Verilog-2005 frontend: /openlane/designs/alu_8bit/alu_8bit.v
+Parsing SystemVerilog input from `/openlane/designs/alu_8bit/alu_8bit.v' to AST representation.
+Generating RTLIL representation for module `\alu_8bit'.
+Generating RTLIL representation for module `\add'.
+Generating RTLIL representation for module `\sub'.
+Generating RTLIL representation for module `\mul'.
+Generating RTLIL representation for module `\and_1'.
+Generating RTLIL representation for module `\or_1'.
+Generating RTLIL representation for module `\xor_1'.
+Generating RTLIL representation for module `\not_1'.
+Generating RTLIL representation for module `\right_shift'.
+Successfully finished Verilog frontend.
+
+2. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/synthesis/hierarchy.dot'.
+Dumping module alu_8bit to page 1.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \alu_8bit
+Used module:     \right_shift
+Used module:     \not_1
+Used module:     \xor_1
+Used module:     \or_1
+Used module:     \and_1
+Used module:     \mul
+Used module:     \sub
+Used module:     \add
+
+3.2. Analyzing design hierarchy..
+Top module:  \alu_8bit
+Used module:     \right_shift
+Used module:     \not_1
+Used module:     \xor_1
+Used module:     \or_1
+Used module:     \and_1
+Used module:     \mul
+Used module:     \sub
+Used module:     \add
+Removed 0 unused modules.
+
+4. Executing TRIBUF pass.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1. Analyzing design hierarchy..
+Top module:  \alu_8bit
+Used module:     \right_shift
+Used module:     \not_1
+Used module:     \xor_1
+Used module:     \or_1
+Used module:     \and_1
+Used module:     \mul
+Used module:     \sub
+Used module:     \add
+
+5.2. Analyzing design hierarchy..
+Top module:  \alu_8bit
+Used module:     \right_shift
+Used module:     \not_1
+Used module:     \xor_1
+Used module:     \or_1
+Used module:     \and_1
+Used module:     \mul
+Used module:     \sub
+Used module:     \add
+Removed 0 unused modules.
+
+6. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+7. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$/openlane/designs/alu_8bit/alu_8bit.v:23$1 in module alu_8bit.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/alu_8bit/alu_8bit.v:23$1 in module alu_8bit.
+Removed a total of 1 dead cases.
+
+8. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 3 assignments to connections.
+
+9. Executing PROC_INIT pass (extract init attributes).
+
+10. Executing PROC_ARST pass (detect async resets in processes).
+
+11. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+12. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\alu_8bit.$proc$/openlane/designs/alu_8bit/alu_8bit.v:23$1'.
+     1/1: $1\y[7:0]
+
+13. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\alu_8bit.\y' from process `\alu_8bit.$proc$/openlane/designs/alu_8bit/alu_8bit.v:23$1'.
+No latch inferred for signal `\alu_8bit.\carry' from process `\alu_8bit.$proc$/openlane/designs/alu_8bit/alu_8bit.v:23$1'.
+No latch inferred for signal `\alu_8bit.\overflow' from process `\alu_8bit.$proc$/openlane/designs/alu_8bit/alu_8bit.v:23$1'.
+
+14. Executing PROC_DFF pass (convert process syncs to FFs).
+
+15. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+16. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\alu_8bit.$proc$/openlane/designs/alu_8bit/alu_8bit.v:23$1'.
+Removing empty process `alu_8bit.$proc$/openlane/designs/alu_8bit/alu_8bit.v:23$1'.
+Cleaned up 1 empty switch.
+
+17. Executing CHECK pass (checking for obvious problems).
+Checking module right_shift...
+Checking module not_1...
+Checking module xor_1...
+Checking module or_1...
+Checking module and_1...
+Checking module mul...
+Checking module sub...
+Checking module add...
+Checking module alu_8bit...
+Found and reported 0 problems.
+
+18. Executing OPT_EXPR pass (perform const folding).
+Optimizing module right_shift.
+<suppressed ~1 debug messages>
+Optimizing module not_1.
+Optimizing module xor_1.
+Optimizing module or_1.
+Optimizing module and_1.
+Optimizing module mul.
+Optimizing module sub.
+Optimizing module add.
+Optimizing module alu_8bit.
+<suppressed ~1 debug messages>
+
+19. Executing FLATTEN pass (flatten design).
+Deleting now unused module right_shift.
+Deleting now unused module not_1.
+Deleting now unused module xor_1.
+Deleting now unused module or_1.
+Deleting now unused module and_1.
+Deleting now unused module mul.
+Deleting now unused module sub.
+Deleting now unused module add.
+<suppressed ~8 debug messages>
+
+20. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+Removed 0 unused cells and 13 unused wires.
+<suppressed ~1 debug messages>
+
+22. Executing OPT pass (performing simple optimizations).
+
+22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu_8bit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu_8bit.
+Performed a total of 0 changes.
+
+22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+22.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+
+22.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+22.9. Finished OPT passes. (There is nothing left to do.)
+
+23. Executing FSM pass (extract and optimize FSM).
+
+23.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+23.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+23.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+
+23.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+23.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+23.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+23.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+24. Executing OPT pass (performing simple optimizations).
+
+24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+24.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu_8bit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+24.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu_8bit.
+Performed a total of 0 changes.
+
+24.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+24.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+24.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+
+24.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+24.9. Finished OPT passes. (There is nothing left to do.)
+
+25. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 3) from port B of cell alu_8bit.$procmux$15_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell alu_8bit.$procmux$16_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell alu_8bit.$procmux$17_CMP0 ($eq).
+Removed top 8 bits (of 16) from port Y of cell alu_8bit.$flatten\u_3.$mul$/openlane/designs/alu_8bit/alu_8bit.v:54$4 ($mul).
+Removed top 1 bits (of 8) from wire alu_8bit.right_out.
+
+26. Executing PEEPOPT pass (run peephole optimizers).
+
+27. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+28. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module alu_8bit:
+  creating $macc model for $flatten\u_1.$add$/openlane/designs/alu_8bit/alu_8bit.v:43$2 ($add).
+  creating $macc model for $flatten\u_2.$sub$/openlane/designs/alu_8bit/alu_8bit.v:47$3 ($sub).
+  creating $macc model for $flatten\u_3.$mul$/openlane/designs/alu_8bit/alu_8bit.v:54$4 ($mul).
+  creating $alu model for $macc $flatten\u_2.$sub$/openlane/designs/alu_8bit/alu_8bit.v:47$3.
+  creating $alu model for $macc $flatten\u_1.$add$/openlane/designs/alu_8bit/alu_8bit.v:43$2.
+  creating $macc cell for $flatten\u_3.$mul$/openlane/designs/alu_8bit/alu_8bit.v:54$4: $auto$alumacc.cc:365:replace_macc$20
+  creating $alu cell for $flatten\u_1.$add$/openlane/designs/alu_8bit/alu_8bit.v:43$2: $auto$alumacc.cc:485:replace_alu$21
+  creating $alu cell for $flatten\u_2.$sub$/openlane/designs/alu_8bit/alu_8bit.v:47$3: $auto$alumacc.cc:485:replace_alu$24
+  created 2 $alu and 1 $macc cells.
+
+29. Executing SHARE pass (SAT-based resource sharing).
+
+30. Executing OPT pass (performing simple optimizations).
+
+30.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+30.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+30.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu_8bit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+30.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu_8bit.
+Performed a total of 0 changes.
+
+30.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+30.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+30.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+
+30.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+30.9. Finished OPT passes. (There is nothing left to do.)
+
+31. Executing MEMORY pass.
+
+31.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+31.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+31.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+31.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+31.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+31.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+
+31.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+31.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+31.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+
+31.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+32. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+
+33. Executing OPT pass (performing simple optimizations).
+
+33.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+<suppressed ~5 debug messages>
+
+33.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+33.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+33.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+33.5. Finished fast OPT passes.
+
+34. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+35. Executing OPT pass (performing simple optimizations).
+
+35.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+35.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+35.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu_8bit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+35.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu_8bit.
+Performed a total of 0 changes.
+
+35.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+35.6. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $pmux $procmux$10 in front of them:
+        $auto$alumacc.cc:485:replace_alu$24
+        $auto$alumacc.cc:485:replace_alu$21
+
+35.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+35.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+35.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+<suppressed ~5 debug messages>
+
+35.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+35.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu_8bit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+35.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu_8bit.
+    New ctrl vector for $pmux cell $procmux$10: { $procmux$16_CMP $procmux$15_CMP $procmux$14_CMP $procmux$13_CMP $procmux$12_CMP $procmux$11_CMP }
+  Optimizing cells in module \alu_8bit.
+Performed a total of 1 changes.
+
+35.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+35.14. Executing OPT_SHARE pass.
+
+35.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+35.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+
+35.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+35.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+35.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu_8bit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+35.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu_8bit.
+Performed a total of 0 changes.
+
+35.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+35.22. Executing OPT_SHARE pass.
+
+35.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+35.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+
+35.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+35.26. Finished OPT passes. (There is nothing left to do.)
+
+36. Executing TECHMAP pass (map to technology primitives).
+
+36.1. Executing Verilog-2005 frontend: /build/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/build/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+36.2. Continuing TECHMAP pass.
+Using extmapper maccmap for cells of type $macc.
+  add \a * \b (8x8 bits, unsigned)
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_90_alu for cells of type $alu.
+Using template $paramod$e830d104b5de63a966ae948f6aff012e63986700\_90_pmux for cells of type $pmux.
+Running "alumacc" on wrapper $extern:wrap:$neg:A_SIGNED=0:A_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$neg:A_SIGNED=0:A_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$neg:A_SIGNED=0:A_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001000 for cells of type $fa.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $reduce_or.
+Using template $paramod$fd7bfb1a4f3a7c2ac1a35670d0fa64ccc7b91841\_90_alu for cells of type $alu.
+No more expansions possible.
+<suppressed ~449 debug messages>
+
+37. Executing OPT pass (performing simple optimizations).
+
+37.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+<suppressed ~290 debug messages>
+
+37.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+<suppressed ~51 debug messages>
+Removed a total of 17 cells.
+
+37.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+37.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+Removed 43 unused cells and 254 unused wires.
+<suppressed ~44 debug messages>
+
+37.5. Finished fast OPT passes.
+
+38. Executing ABC pass (technology mapping using ABC).
+
+38.1. Extracting gate netlist of module `\alu_8bit' to `<abc-temp-dir>/input.blif'..
+Extracted 366 gates and 385 wires to a netlist network with 19 inputs and 8 outputs.
+
+38.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+38.1.2. Re-integrating ABC results.
+ABC RESULTS:               NOT cells:       20
+ABC RESULTS:              XNOR cells:       15
+ABC RESULTS:               NOR cells:       20
+ABC RESULTS:              NAND cells:       28
+ABC RESULTS:             ORNOT cells:        5
+ABC RESULTS:               AND cells:       24
+ABC RESULTS:               XOR cells:       66
+ABC RESULTS:            ANDNOT cells:       95
+ABC RESULTS:                OR cells:       60
+ABC RESULTS:               MUX cells:       15
+ABC RESULTS:        internal signals:      358
+ABC RESULTS:           input signals:       19
+ABC RESULTS:          output signals:        8
+Removing temp directory.
+
+39. Executing OPT pass (performing simple optimizations).
+
+39.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+39.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+39.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+39.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+Removed 0 unused cells and 126 unused wires.
+<suppressed ~3 debug messages>
+
+39.5. Finished fast OPT passes.
+
+40. Executing HIERARCHY pass (managing design hierarchy).
+
+40.1. Analyzing design hierarchy..
+Top module:  \alu_8bit
+
+40.2. Analyzing design hierarchy..
+Top module:  \alu_8bit
+Removed 0 unused modules.
+
+41. Printing statistics.
+
+=== alu_8bit ===
+
+   Number of wires:                375
+   Number of wire bits:            608
+   Number of public wires:          35
+   Number of public wire bits:     268
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                348
+     $_ANDNOT_                      95
+     $_AND_                         24
+     $_MUX_                         15
+     $_NAND_                        28
+     $_NOR_                         20
+     $_NOT_                         20
+     $_ORNOT_                        5
+     $_OR_                          60
+     $_XNOR_                        15
+     $_XOR_                         66
+
+42. Executing CHECK pass (checking for obvious problems).
+Checking module alu_8bit...
+Found and reported 0 problems.
+
+43. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/synthesis/post_techmap.dot'.
+Dumping module alu_8bit to page 1.
+
+44. Executing SHARE pass (SAT-based resource sharing).
+
+45. Executing OPT pass (performing simple optimizations).
+
+45.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+45.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+45.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu_8bit..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+45.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu_8bit.
+Performed a total of 0 changes.
+
+45.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu_8bit'.
+Removed a total of 0 cells.
+
+45.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+45.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+
+45.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu_8bit.
+
+45.9. Finished OPT passes. (There is nothing left to do.)
+
+46. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+Removed 0 unused cells and 29 unused wires.
+<suppressed ~29 debug messages>
+
+47. Printing statistics.
+
+=== alu_8bit ===
+
+   Number of wires:                346
+   Number of wire bits:            369
+   Number of public wires:           6
+   Number of public wire bits:      29
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                348
+     $_ANDNOT_                      95
+     $_AND_                         24
+     $_MUX_                         15
+     $_NAND_                        28
+     $_NOR_                         20
+     $_NOT_                         20
+     $_ORNOT_                        5
+     $_OR_                          60
+     $_XNOR_                        15
+     $_XOR_                         66
+
+mapping tbuf
+
+48. Executing TECHMAP pass (map to technology primitives).
+
+48.1. Executing Verilog-2005 frontend: /openlane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/openlane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+48.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+49. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+50. Executing TECHMAP pass (map to technology primitives).
+
+50.1. Executing Verilog-2005 frontend: /openlane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/openlane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+50.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+51. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+52. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+52.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\alu_8bit':
+
+53. Printing statistics.
+
+=== alu_8bit ===
+
+   Number of wires:                346
+   Number of wire bits:            369
+   Number of public wires:           6
+   Number of public wire bits:      29
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                348
+     $_ANDNOT_                      95
+     $_AND_                         24
+     $_MUX_                         15
+     $_NAND_                        28
+     $_NOR_                         20
+     $_NOT_                         20
+     $_ORNOT_                        5
+     $_OR_                          60
+     $_XNOR_                        15
+     $_XOR_                         66
+
+[INFO]: USING STRATEGY AREA 0
+
+54. Executing ABC pass (technology mapping using ABC).
+
+54.1. Extracting gate netlist of module `\alu_8bit' to `/tmp/yosys-abc-1Y66t9/input.blif'..
+Extracted 348 gates and 367 wires to a netlist network with 19 inputs and 8 outputs.
+
+54.1.1. Executing ABC.
+Running ABC command: "/build/bin/yosys-abc" -s -f /tmp/yosys-abc-1Y66t9/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-1Y66t9/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-1Y66t9/input.blif 
+ABC: + read_lib -w /openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.07 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130A_merged" from "/openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.10 sec
+ABC: Memory =    9.54 MB. Time =     0.10 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
+ABC: Setting output load to be 33.450001.
+ABC: + read_constr /openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + retime -D -D 10000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 10000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + buffer -N 10 -S 750.0 
+ABC: + upsize -D 10000 
+ABC: Current delay (3235.99 ps) does not exceed the target delay (10000.00 ps). Upsizing is not performed.
+ABC: + dnsize -D 10000 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =    256 (  9.4 %)   Cap =  9.7 ff (  2.1 %)   Area =     2362.27 ( 90.6 %)   Delay =  3551.73 ps  (  9.0 %)               
+ABC: Path  0 --      12 : 0    2 pi                        A =   0.00  Df =  13.7   -8.2 ps  S =  24.9 ps  Cin =  0.0 ff  Cout =   3.8 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     106 : 1   10 sky130_fd_sc_hd__buf_1    A =   3.75  Df = 382.1 -160.2 ps  S = 472.5 ps  Cin =  2.1 ff  Cout =  40.2 ff  Cmax = 130.0 ff  G = 1821  
+ABC: Path  2 --     136 : 4    3 sky130_fd_sc_hd__a22oi_2  A =  12.51  Df = 518.0  -53.4 ps  S = 217.3 ps  Cin =  4.3 ff  Cout =  11.5 ff  Cmax = 170.3 ff  G =  253  
+ABC: Path  3 --     138 : 3    2 sky130_fd_sc_hd__or3_2    A =   7.51  Df =1003.6 -375.9 ps  S =  84.6 ps  Cin =  1.5 ff  Cout =   4.9 ff  Cmax = 310.4 ff  G =  308  
+ABC: Path  4 --     141 : 4    2 sky130_fd_sc_hd__a211o_2  A =  10.01  Df =1308.7 -456.0 ps  S =  51.2 ps  Cin =  2.4 ff  Cout =   4.1 ff  Cmax = 325.0 ff  G =  167  
+ABC: Path  5 --     186 : 3    2 sky130_fd_sc_hd__a21o_2   A =   8.76  Df =1517.8 -508.4 ps  S =  37.4 ps  Cin =  2.4 ff  Cout =   4.2 ff  Cmax = 309.5 ff  G =  166  
+ABC: Path  6 --     187 : 3    2 sky130_fd_sc_hd__and3_2   A =   7.51  Df =1719.8 -451.0 ps  S =  50.3 ps  Cin =  1.5 ff  Cout =   4.2 ff  Cmax = 309.5 ff  G =  264  
+ABC: Path  7 --     189 : 2    1 sky130_fd_sc_hd__and2b_2  A =   8.76  Df =1940.4  -40.7 ps  S =  61.2 ps  Cin =  1.6 ff  Cout =   8.4 ff  Cmax = 310.4 ff  G =  521  
+ABC: Path  8 --     190 : 2    4 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df =2126.1  -18.1 ps  S = 259.7 ps  Cin =  8.5 ff  Cout =  16.6 ff  Cmax = 121.8 ff  G =  188  
+ABC: Path  9 --     230 : 4    3 sky130_fd_sc_hd__or4bb_2  A =  12.51  Df =2752.6 -430.3 ps  S = 116.3 ps  Cin =  1.5 ff  Cout =   8.4 ff  Cmax = 312.2 ff  G =  546  
+ABC: Path 10 --     241 : 3    2 sky130_fd_sc_hd__a21bo_2  A =  10.01  Df =2990.2 -311.3 ps  S =  65.0 ps  Cin =  2.0 ff  Cout =   9.2 ff  Cmax = 288.4 ff  G =  434  
+ABC: Path 11 --     272 : 5    1 sky130_fd_sc_hd__a311oi_2 A =  15.01  Df =3245.2 -178.5 ps  S = 176.9 ps  Cin =  4.3 ff  Cout =   2.5 ff  Cmax =  84.2 ff  G =   54  
+ABC: Path 12 --     283 : 5    1 sky130_fd_sc_hd__o32a_2   A =  11.26  Df =3551.7  -14.6 ps  S = 181.0 ps  Cin =  2.3 ff  Cout =  33.5 ff  Cmax = 300.3 ff  G = 1452  
+ABC: Start-point = pi11 (\a [4]).  End-point = po7 (\y [7]).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o =   19/    8  lat =    0  nd =   256  edge =    705  area =2362.59  delay =14.00  lev = 14
+ABC: + write_blif /tmp/yosys-abc-1Y66t9/output.blif 
+
+54.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a311o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and4b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2a_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2b_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:       18
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__or4bb_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a211o_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a21bo_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nand4_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__a32o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:       27
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__mux2_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a311oi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand3_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__o211a_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:       19
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__o32a_2 cells:        2
+ABC RESULTS:        internal signals:      340
+ABC RESULTS:           input signals:       19
+ABC RESULTS:          output signals:        8
+Removing temp directory.
+
+55. Executing SETUNDEF pass (replace undef values with defined constants).
+
+56. Executing HILOMAP pass (mapping to constant drivers).
+
+57. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+58. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu_8bit..
+Removed 0 unused cells and 369 unused wires.
+<suppressed ~1 debug messages>
+
+59. Executing INSBUF pass (insert buffer cells for connected wires).
+
+60. Executing CHECK pass (checking for obvious problems).
+Checking module alu_8bit...
+Warning: Wire alu_8bit.\y [7] is used but has no driver.
+Warning: Wire alu_8bit.\y [6] is used but has no driver.
+Warning: Wire alu_8bit.\y [5] is used but has no driver.
+Warning: Wire alu_8bit.\y [4] is used but has no driver.
+Warning: Wire alu_8bit.\y [3] is used but has no driver.
+Warning: Wire alu_8bit.\y [2] is used but has no driver.
+Warning: Wire alu_8bit.\y [1] is used but has no driver.
+Warning: Wire alu_8bit.\y [0] is used but has no driver.
+Warning: Wire alu_8bit.\overflow is used but has no driver.
+Warning: Wire alu_8bit.\carry is used but has no driver.
+Found and reported 10 problems.
+
+61. Printing statistics.
+
+=== alu_8bit ===
+
+   Number of wires:                254
+   Number of wire bits:            277
+   Number of public wires:           6
+   Number of public wire bits:      29
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                258
+     sky130_fd_sc_hd__a211o_2        5
+     sky130_fd_sc_hd__a21bo_2        6
+     sky130_fd_sc_hd__a21boi_2       1
+     sky130_fd_sc_hd__a21o_2        16
+     sky130_fd_sc_hd__a21oi_2       15
+     sky130_fd_sc_hd__a221o_2        3
+     sky130_fd_sc_hd__a22o_2         8
+     sky130_fd_sc_hd__a22oi_2        4
+     sky130_fd_sc_hd__a2bb2o_2       1
+     sky130_fd_sc_hd__a311o_2        1
+     sky130_fd_sc_hd__a311oi_2       1
+     sky130_fd_sc_hd__a31o_2         4
+     sky130_fd_sc_hd__a31oi_2        4
+     sky130_fd_sc_hd__a32o_2         1
+     sky130_fd_sc_hd__and2_2         4
+     sky130_fd_sc_hd__and2b_2        5
+     sky130_fd_sc_hd__and3_2         7
+     sky130_fd_sc_hd__and3b_2        1
+     sky130_fd_sc_hd__and4_2         7
+     sky130_fd_sc_hd__and4b_2        1
+     sky130_fd_sc_hd__buf_1         18
+     sky130_fd_sc_hd__conb_1         2
+     sky130_fd_sc_hd__inv_2          6
+     sky130_fd_sc_hd__mux2_2         2
+     sky130_fd_sc_hd__nand2_2       27
+     sky130_fd_sc_hd__nand3_2       10
+     sky130_fd_sc_hd__nand3b_2       1
+     sky130_fd_sc_hd__nand4_2        5
+     sky130_fd_sc_hd__nor2_2        13
+     sky130_fd_sc_hd__o211a_2        4
+     sky130_fd_sc_hd__o211ai_2       2
+     sky130_fd_sc_hd__o21a_2         8
+     sky130_fd_sc_hd__o21ai_2       10
+     sky130_fd_sc_hd__o21bai_2       1
+     sky130_fd_sc_hd__o22a_2         2
+     sky130_fd_sc_hd__o2bb2a_2       4
+     sky130_fd_sc_hd__o31a_2         1
+     sky130_fd_sc_hd__o32a_2         2
+     sky130_fd_sc_hd__or2_2          4
+     sky130_fd_sc_hd__or2b_2         4
+     sky130_fd_sc_hd__or3_2          4
+     sky130_fd_sc_hd__or3b_2         5
+     sky130_fd_sc_hd__or4bb_2        1
+     sky130_fd_sc_hd__xnor2_2       19
+     sky130_fd_sc_hd__xor2_2         8
+
+   Chip area for module '\alu_8bit': 2369.772800
+
+62. Executing Verilog backend.
+Dumping module `\alu_8bit'.
+
+Warnings: 10 unique messages, 10 total
+End of script. Logfile hash: 065b5fca72, CPU: user 0.72s system 0.06s, MEM: 28.96 MB peak
+Yosys 0.30+48 (git sha1 14d50a176d5, gcc 8.3.1 -fPIC -Os)
+Time spent: 60% 2x abc (1 sec), 9% 1x dfflibmap (0 sec), ...

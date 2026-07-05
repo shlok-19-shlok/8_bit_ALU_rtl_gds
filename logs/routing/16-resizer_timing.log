@@ -1,0 +1,154 @@
+OpenROAD 41a51eaf4ca2171c92ff38afb91eb37bbd3f36da 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO]: Reading ODB at '/openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/14-alu_8bit.odb'…
+define_corners Slowest Typical Fastest
+read_liberty -corner Slowest /openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib
+read_liberty -corner Typical /openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -corner Fastest /openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib
+Using 1e-12 for capacitance...
+Using 1e+03 for resistance...
+Using 1e-09 for time...
+Using 1e+00 for voltage...
+Using 1e-03 for current...
+Using 1e-09 for power...
+Using 1e-06 for distance...
+Reading design constraints file at '/openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/14-alu_8bit.sdc'…
+[WARNING STA-0357] virtual clock clk can not be propagated.
+[INFO]: Setting signal min routing layer to: met1 and clock min routing layer to met3. 
+[INFO]: Setting signal max routing layer to: met4 and clock max routing layer to met4. 
+-congestion_iterations 50 -verbose -congestion_report_file /openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/routing/resizer-routing-timing-congestion.rpt
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met4
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 0.6150
+[INFO GRT-0019] Found 0 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 11
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 15
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal       4480          2287          48.95%
+met2       Vertical         3360          2262          32.68%
+met3       Horizontal       2240          1436          35.89%
+met4       Vertical         1568           828          47.19%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 1331
+[INFO GRT-0198] Via related Steiner nodes: 29
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 1448
+[INFO GRT-0112] Final usage 3D: 5420
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1              2287           498           21.78%             0 /  0 /  0
+met2              2262           571           25.24%             0 /  0 /  0
+met3              1436             2            0.14%             0 /  0 /  0
+met4               828             5            0.60%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total             6813          1076           15.79%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 12475 um
+[INFO GRT-0014] Routed nets: 304
+[INFO]: Setting RC values...
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0009] rerouting 4 nets.
+[INFO GRT-0009] rerouting 4 nets.
+[INFO GRT-0009] rerouting 6 nets.
+[INFO GRT-0009] rerouting 8 nets.
+[INFO GRT-0009] rerouting 13 nets.
+[INFO GRT-0009] rerouting 13 nets.
+[INFO GRT-0001] Minimum degree: 11
+[INFO GRT-0002] Maximum degree: 11
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0009] rerouting 4 nets.
+[INFO GRT-0009] rerouting 6 nets.
+[INFO GRT-0001] Minimum degree: 4
+[INFO GRT-0002] Maximum degree: 9
+[INFO GRT-0009] rerouting 3 nets.
+[INFO GRT-0001] Minimum degree: 3
+[INFO GRT-0002] Maximum degree: 7
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 11
+[INFO GRT-0002] Maximum degree: 11
+[INFO GRT-0009] rerouting 4 nets.
+[INFO GRT-0001] Minimum degree: 4
+[INFO GRT-0002] Maximum degree: 4
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0009] rerouting 6 nets.
+[INFO GRT-0009] rerouting 9 nets.
+[INFO GRT-0009] rerouting 9 nets.
+[INFO GRT-0009] rerouting 11 nets.
+[INFO GRT-0009] rerouting 13 nets.
+[INFO GRT-0001] Minimum degree: 4
+[INFO GRT-0002] Maximum degree: 9
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 4
+[INFO GRT-0002] Maximum degree: 4
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0009] rerouting 4 nets.
+[INFO GRT-0009] rerouting 8 nets.
+[INFO GRT-0009] rerouting 10 nets.
+[INFO GRT-0001] Minimum degree: 7
+[INFO GRT-0002] Maximum degree: 7
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0009] rerouting 4 nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 4
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0009] rerouting 4 nets.
+[INFO GRT-0009] rerouting 6 nets.
+[INFO GRT-0009] rerouting 8 nets.
+[INFO GRT-0009] rerouting 8 nets.
+[INFO GRT-0009] rerouting 11 nets.
+[INFO GRT-0001] Minimum degree: 7
+[INFO GRT-0002] Maximum degree: 9
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0009] rerouting 4 nets.
+[INFO GRT-0009] rerouting 5 nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 7
+[INFO RSZ-0040] Inserted 6 buffers.
+[INFO RSZ-0041] Resized 29 instances.
+[WARNING RSZ-0062] Unable to repair all setup violations.
+[INFO RSZ-0033] No hold violations found.
+Placement Analysis
+---------------------------------
+total displacement         56.8 u
+average displacement        0.1 u
+max displacement            4.6 u
+original HPWL            6545.0 u
+legalized HPWL           6783.4 u
+delta HPWL                    4 %
+
+[INFO DPL-0020] Mirrored 122 instances
+[INFO DPL-0021] HPWL before            6783.4 u
+[INFO DPL-0022] HPWL after             6591.3 u
+[INFO DPL-0023] HPWL delta               -2.8 %
+Setting global connections for newly added cells…
+Writing OpenROAD database to '/openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/16-alu_8bit.odb'…
+Writing netlist to '/openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/16-alu_8bit.nl.v'…
+Writing powered netlist to '/openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/16-alu_8bit.pnl.v'…
+Writing layout to '/openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/16-alu_8bit.def'…
+Writing timing constraints to '/openlane/designs/alu_8bit/runs/RUN_2026.07.04_16.25.08/tmp/16-alu_8bit.sdc'…
+area_report
+
+===========================================================================
+report_design_area
+============================================================================
+Design area 2248 u^2 29% utilization.
+area_report_end
