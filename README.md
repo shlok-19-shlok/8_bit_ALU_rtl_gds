@@ -5,7 +5,7 @@
 | :--- | :--- | :--- |
 | `000` | Arithmetic | 8-bit Binary Addition (A + B) |
 | `001` | Arithmetic | 8-bit Binary Subtraction (A - B) |
-| `010` | 
+| `010` | Multipli   |  8-bit Binary Multipli (A*B) |
 | `011` | Logical | Bitwise AND (A  &  B) |
 | `100` | Logical | Bitwise OR (A  |  B) |
 | `101` | Logical | Bitwise XOR (A ^ B) |
@@ -58,4 +58,4 @@ The physical design implementation
 
 ## Links
 1. routed_design = 
-2. gds_file_view = 
+2. gds_file_view = https://github.com/shlok-19-shlok/8_bit_ALU_rtl_gds/blob/main/screenshots/10_gds_file_klayout.png
