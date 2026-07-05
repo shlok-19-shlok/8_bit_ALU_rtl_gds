@@ -37,25 +37,25 @@ The physical design implementation
 10. KLayout
 
 
-Technology Node	=  SkyWater 130nm (sky130_fd_sc_hd)
-Clock Frequency	=  100 MHz (Clock Period: 10.0 ns)
-Die Dimensions	=  99.92 µm × 110.64 µm
-Total Die Area	=  11,054.10 µm²
-Core Dimensions	 = 88.78 µm × 87.04 µm
-Total Core Area	=  7,727.41 µm²
-Configured Core Utilization	= 30.0%
+1. Technology Node	  =  SkyWater 130nm (sky130_fd_sc_hd)
+2. Clock Frequency	  =  100 MHz (Clock Period: 10.0 ns)
+3. Die Dimensions	    =  99.92 µm × 110.64 µm
+4. Total Die Area	    =  11,054.10 µm²
+5. Core Dimensions	   = 88.78 µm × 87.04 µm
+6. Total Core Area    	=  7,727.41 µm²
+7. Configured Core Utilization	= 30.0%
 
 
 ## Initial DRC
-Metal Spacing = 210
-Min Width = 1
-Short = 4056
+1. Metal Spacing = 210
+2. Min Width = 1
+3. Short = 4056
 
 ## After
-DRC_CHECK = 0
-LVS_CHECK = 0
-ANTENNA_CHECK =0
+1. DRC_CHECK = 0
+2. LVS_CHECK = 0
+3. ANTENNA_CHECK =0
 
 ## Links
-routed_design = 
-gds_file_view = 
+1. routed_design = 
+2. gds_file_view = 
